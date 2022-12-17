@@ -5,7 +5,7 @@ import { Image, ImageItem } from './GalleryItem.styled';
 export const GalleryItem = ({ webformatURL, largeImageURL, getImage }) => {
   return (
     <ImageItem onClick={() => getImage(largeImageURL)}>
-      <Image src={webformatURL} alt="photo" />
+      <Image src={webformatURL} alt="" />
     </ImageItem>
   );
 };

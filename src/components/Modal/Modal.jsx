@@ -26,7 +26,7 @@ export class Modal extends Component {
     return (
       <Backdrop onClick={this.closeModal}>
         <ModalWindow>
-          <img src={image} alt="photo" />
+          <img src={image} alt="" />
         </ModalWindow>
       </Backdrop>
     );
