@@ -81,7 +81,7 @@ export class GalleryList extends Component {
         </h1>
       );
     }
-    if (status === 'success') {
+    if (pictureObjects.length > 0) {
       return (
         <>
           <ImageGallery>
