@@ -3,18 +3,20 @@ import { Backdrop, ModalWindow } from './Modal.styled';
 
 export const Modal = ({ image, onCloseModal }) => {
   useEffect(() => {
-    window.addEventListener('keydown', onCloseModal);
+    window.addEventListener('keydown', closeModalOnEscape);
 
     return () => {
-      window.removeEventListener('keydown', onCloseModal);
+      window.removeEventListener('keydown', closeModalOnEscape);
     };
-  }, [onCloseModal]);
+  });
 
-  const closeModal = event => {
+  const closeModalOnEscape = event => {
     if (event.code === 'Escape') {
       onCloseModal();
-      return;
     }
+  };
+
+  const closeModalOnClick = event => {
     if (event.currentTarget !== event.target) {
       return;
     }
@@ -23,7 +25,7 @@ export const Modal = ({ image, onCloseModal }) => {
   };
 
   return (
-    <Backdrop onClick={closeModal}>
+    <Backdrop onClick={closeModalOnClick}>
       <ModalWindow>
         <img src={image} alt="" />
       </ModalWindow>
