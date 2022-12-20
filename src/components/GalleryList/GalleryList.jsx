@@ -10,16 +10,6 @@ import { smoothScroll } from 'utils/smoothScroll';
 import { Spinner } from 'components/Spinner/Spinner';
 
 export const GalleryList = ({ searchValue }) => {
-  // state = {
-  //   page: 1,
-  //   totalHits: null,
-  //   pictureObjects: [],
-  //   status: 'idle',
-  //   error: null,
-  //   modalImage: null,
-  //   isLoading: false,
-  // };
-
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [pictureObjects, setPictureObjects] = useState([]);
